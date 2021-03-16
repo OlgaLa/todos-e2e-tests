@@ -1,0 +1,14 @@
+name: todos-e2e-tests
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v1
+      - name: build and test
+        run: |
+         docker run -it -v $PWD:/e2e -w /e2e cypress/included:6.7.1
+      - uses: actions/upload-artifact@v2
+        with:
+          name: test-reports
+          path: videos
