@@ -1,0 +1,27 @@
+[
+    {
+       "completed":false,
+       "editing":false,
+       "_title":"First Item"
+    },
+    {
+        "completed":false,
+        "editing":true,
+        "_title":"Edited Item"
+    },
+    {
+        "completed":true,
+        "editing":true,
+        "_title":"Edited and Completed Item"
+    },
+    {
+       "completed":false,
+       "editing":false,
+       "_title":"Second Item"
+    },
+    {
+       "completed":true,
+       "editing":false,
+       "_title":"Completed Item"
+    }
+ ]
