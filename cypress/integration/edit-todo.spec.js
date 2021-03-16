@@ -10,7 +10,7 @@ describe('For checking editing the test', function() {
 
     let newName = "Edit todo during the test";
 
-    it('edits uncompleted todo by name', function() {
+    it('edits uncompleted todo by name [ED-1]', function() {
 
         todoPage.getTodosList().then(todos => {
             this.totalItems = todos.length;
@@ -35,7 +35,7 @@ describe('For checking editing the test', function() {
         })
    })
 
-    it('edits completed todo by name', function(){
+    it('edits completed todo by name [ED-2]', function(){
 
         todoPage.getTodosList().then(todos => {
             this.totalItems = todos.length;
@@ -60,7 +60,7 @@ describe('For checking editing the test', function() {
         });
     })
 
-    it('makes uncompleted todo completed', function(){
+    it('makes uncompleted todo completed [ED-3]', function(){
 
         todoPage.getTodosListCompleted().then(todos => {
             this.completed = todos.length;
@@ -79,7 +79,7 @@ describe('For checking editing the test', function() {
         });
     })
 
-    it('makes completed todo uncompleted', function(){
+    it('makes completed todo uncompleted [ED-4]', function(){
 
         todoPage.getTodosListCompleted().then(todos => {
             this.completed = todos.length;

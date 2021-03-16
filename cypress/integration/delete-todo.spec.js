@@ -9,7 +9,7 @@ describe('For checking deletion the test', function() {
         cy.createTodosInLocalStorage();
     })
 
-    it('deletes all completed todos by clicking delete icon', function(){
+    it('deletes all completed todos by clicking delete icon [D-1]', function(){
         
         todoPage.getTodosList().then(todos => {
                 this.totalItems = todos.length;
@@ -29,7 +29,7 @@ describe('For checking deletion the test', function() {
         });
     })
 
-    it('deletes all completed todos by clicking "Clear completed" button', function(){
+    it('deletes all completed todos by clicking "Clear completed" button [D-2]', function(){
         
         todoPage.getTodosList().then(todos => {
                 this.totalItems = todos.length;
@@ -52,7 +52,7 @@ describe('For checking deletion the test', function() {
         });
     })
 
-    it('deletes todo by name', function(){
+    it('deletes todo by name [D-3]', function(){
 
         cy.returnFirstNotCompletedTodo().then(json => {
 
@@ -63,13 +63,17 @@ describe('For checking deletion the test', function() {
             todoPage.getTodoByName(json._title).then(todos => {
                 this.deleted = todos.length;
             })
+
+            todoPage.getTodosListCompleted().then(todos => {
+                this.completed = todos.length;
+            })
     
             todoPage.getTodoCountFromStrong()
             .then(initialCount => {
                 todoPage.deleteTodoByName(json._title);
 
                 todoPage.validateTodosListSize(this.totalItems-this.deleted);
-                todoPage.validateTodoCompletedExist();
+                todoPage.validateTodosListCompletedSize(this.completed)
                 todoPage.validateTodosCount(initialCount-this.deleted);
                 todoPage.validateTodoByNameNotExists(json._title);
             });
@@ -77,7 +81,7 @@ describe('For checking deletion the test', function() {
         });
     })
 
-    it('deletes all todos', function(){
+    it('deletes all todos [D-4]', function(){
 
         todoPage.deleteAllTodos();
         todoPage.validateTodoNotExist();

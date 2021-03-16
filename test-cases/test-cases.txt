@@ -1,0 +1,99 @@
+########## Create Todo
+
+[CR-1]
+Given todo list without any todos
+When I enter todo with random name and press Enter
+Then the new todo is added to the list 
+And todo count is eaqual 1
+
+[CR-2]
+Given todo list without any todos
+When I enter empty todo name and press Enter
+Then the new todo is not added to the list 
+And todo count does not exist
+
+[CR-3]
+Given todo list without any todos
+When I enter todo name which contains only spaces and press Enter
+Then the new todo is not added to the list 
+And todo count does not exist
+
+[CR-4]
+Given todo list without any todos
+When I enter todo name which contains symbols and press Enter
+Then the new todo is added to the list 
+And todo count is eaqual 1
+
+[CR-5]
+Given todo list without any todos
+When I enter todo name which contains emoji and press Enter
+Then the new todo is added to the list 
+And todo count is eaqual 1
+
+[CR-6]
+Given todo list without any todos
+When I enter todo name which contains xss injection and press Enter
+Then the xss script is not processed 
+And the new todo is added to the list 
+And todo count is eaqual 1
+
+######### Edit Todo
+
+[ED-1]
+Given todo list which contains completed and uncompleted todos
+When I edit an uncompleted todo
+Then the todo with new name is in the list
+And the number of all todos in the list does not change
+And the number of completed todos in the list does not change
+And the count of uncompleted todos does not change 
+
+[ED-2]
+Given todo list which contains completed and uncompleted todos
+When I edit a completed todo
+Then the todo with new name is in the list
+And the number of all todos in the list does not change
+And the number of completed todos in the list does not change
+And the count of uncompleted todos does not change 
+
+[ED-3]
+Given todo list which contains completed and uncompleted todos
+When I make uncompleted todo completed
+Then the number of completed todos in the list increments
+And the count of uncompleted todos decrements
+
+[ED-4]
+Given todo list which contains completed and uncompleted todos
+When I make completed todo uncompleted
+Then the number of completed todos in the list decrements
+And the count of uncompleted todos increments 
+
+######## Delete Todo
+
+[D-1]
+Given todo list which contains completed and uncompleted todos
+When I delete all completed todos 
+And the number of all todos in the list decreases by the number of completed todos
+And the completed todos do not exist in the list 
+And the count of uncompleted todos does not change 
+
+[D-2]
+Given todo list which contains completed and uncompleted todos
+When I delete all completed todos by clicking "Clear completed" button
+And the number of all todos in the list decreases by the number of completed todos
+And the completed todos do not exist in the list 
+And the count of uncompleted todos does not change 
+And "Clear completed" button is not displayed 
+
+[D-3]
+Given todo list which contains completed and uncompleted todos
+When I delete uncompleted todo
+Then the uncompleted todo does not exist in the list 
+And the count of uncompleted todos decreases by 1
+And the number of all todos in the list decreases by 1
+And the number of completed todos does not change 
+
+[D-4]
+Given todo list which contains completed and uncompleted todos
+When I delete all todos
+Then the todo list does not exist
+And the count of uncompleted todos does not exist
