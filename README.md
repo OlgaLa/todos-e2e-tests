@@ -42,5 +42,5 @@ You can find and download them by navigating to https://github.com/OlgaLa/todos-
 
 ## Test cases
 
-The test cases are documented in folder "test-cases". Every test case has an ID. This ID is used as a reference to the relevant e2e test.
+The test cases are documented in the folder `test-cases`. Every test case has an ID. This ID is used as a reference to the relevant e2e test.
 
