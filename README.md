@@ -40,3 +40,7 @@ This repository contains a GitHub Actions build pipeline which is triggered on e
 
 You can find and download them by navigating to https://github.com/OlgaLa/todos-e2e-tests/actions and selecting the latest run log. The artifacts would be located in **Artifacts** section at the bottom of the page.
 
+## Test cases
+
+The test cases are documented in folder "test-cases". Every test case has an ID. This ID is used as a reference to the relevant e2e test.
+
