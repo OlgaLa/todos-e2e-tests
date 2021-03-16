@@ -26,7 +26,7 @@ If you don't want to install cypress you can run tests in Docker.
 
 Linux/Mac: 
 ```bash
-docker run -v $PWD:/e2e -w /e2e cypress/included:6.7.1
+docker run -it -v $PWD:/e2e -w /e2e cypress/included:6.7.1
 ```
 
 Windows in PowerShell: 
